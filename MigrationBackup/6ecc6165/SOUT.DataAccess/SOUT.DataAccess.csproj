@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7C6C4701-BE38-4CFE-B65B-01A31263E105}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MAR.DataAccess</RootNamespace>
+    <AssemblyName>MAR.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net45\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\WSLotteryVIP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DALHelper.cs" />
+    <Compile Include="Repositories\SqlDataAccess.cs" />
+    <Compile Include="Tables\DTOs\CL_Cliente.cs" />
+    <Compile Include="Tables\DTOs\CL_ClienteCampo.cs" />
+    <Compile Include="Tables\DTOs\CL_ClienteDetalle.cs" />
+    <Compile Include="Tables\DTOs\CL_Pagos.cs" />
+    <Compile Include="Tables\DTOs\CL_Recibo.cs" />
+    <Compile Include="Tables\DTOs\CL_ReciboCampo.cs" />
+    <Compile Include="Tables\DTOs\CL_ReciboDetalle.cs" />
+    <Compile Include="Tables\DTOs\CL_ReciboDetalle_Extra.cs" />
+    <Compile Include="Tables\DTOs\DAlerta.cs" />
+    <Compile Include="Tables\DTOs\DBilleteDetalle.cs" />
+    <Compile Include="Tables\DTOs\DControlDetalle.cs" />
+    <Compile Include="Tables\DTOs\DControle.cs" />
+    <Compile Include="Tables\DTOs\dcontroles_bk.cs" />
+    <Compile Include="Tables\DTOs\DImpuestoRetenido.cs" />
+    <Compile Include="Tables\DTOs\DListaDia.cs" />
+    <Compile Include="Tables\DTOs\DMensaje.cs" />
+    <Compile Include="Tables\DTOs\DRiesgoDia.cs" />
+    <Compile Include="Tables\DTOs\DTicket.cs" />
+    <Compile Include="Tables\DTOs\DTicketDetalle.cs" />
+    <Compile Include="Tables\DTOs\dtproperty.cs" />
+    <Compile Include="Tables\DTOs\DWebProductoDetalle.cs" />
+    <Compile Include="Tables\DTOs\HAlerta.cs" />
+    <Compile Include="Tables\DTOs\HCertificado.cs" />
+    <Compile Include="Tables\DTOs\HClaveLocal.cs" />
+    <Compile Include="Tables\DTOs\HContabilidad.cs" />
+    <Compile Include="Tables\DTOs\HControle.cs" />
+    <Compile Include="Tables\DTOs\HDestino.cs" />
+    <Compile Include="Tables\DTOs\HEstatusDia.cs" />
+    <Compile Include="Tables\DTOs\HImpuestoRetenido.cs" />
+    <Compile Include="Tables\DTOs\HLog.cs" />
+    <Compile Include="Tables\DTOs\HMensaje.cs" />
+    <Compile Include="Tables\DTOs\HPago.cs" />
+    <Compile Include="Tables\DTOs\HRebote.cs" />
+    <Compile Include="Tables\DTOs\HResuman.cs" />
+    <Compile Include="Tables\DTOs\HSecurityLog.cs" />
+    <Compile Include="Tables\DTOs\HTicket.cs" />
+    <Compile Include="Tables\DTOs\HTicketDetalle.cs" />
+    <Compile Include="Tables\DTOs\HTicketLocalDetalle.cs" />
+    <Compile Include="Tables\DTOs\HTicketsLocal.cs" />
+    <Compile Include="Tables\DTOs\HWebProductoDetalle.cs" />
+    <Compile Include="Tables\DTOs\MARContext.cs" />
+    <Compile Include="Tables\DTOs\MBanca.cs" />
+    <Compile Include="Tables\DTOs\MBancasConfig.cs" />
+    <Compile Include="Tables\DTOs\MConsorcio.cs" />
+    <Compile Include="Tables\DTOs\MCuenta.cs" />
+    <Compile Include="Tables\DTOs\MDiasDefecto.cs" />
+    <Compile Include="Tables\DTOs\MImpuestoRango.cs" />
+    <Compile Include="Tables\DTOs\MNotificacione.cs" />
+    <Compile Include="Tables\DTOs\MPrecio.cs" />
+    <Compile Include="Tables\DTOs\MPremioSuperPale.cs" />
+    <Compile Include="Tables\DTOs\MRifero.cs" />
+    <Compile Include="Tables\DTOs\MUsuario.cs" />
+    <Compile Include="Tables\DTOs\MZona.cs" />
+    <Compile Include="Tables\DTOs\MZonaLimite.cs" />
+    <Compile Include="Tables\DTOs\PDPine.cs" />
+    <Compile Include="Tables\DTOs\PHPine.cs" />
+    <Compile Include="Tables\DTOs\PHVenta.cs" />
+    <Compile Include="Tables\DTOs\PHVentas_Productos_PreRebuild.cs" />
+    <Compile Include="Tables\DTOs\PMCuenta.cs" />
+    <Compile Include="Tables\DTOs\PMProducto.cs" />
+    <Compile Include="Tables\DTOs\PMSuplidore.cs" />
+    <Compile Include="Tables\DTOs\PVPine.cs" />
+    <Compile Include="Tables\DTOs\RCuentasBanca.cs" />
+    <Compile Include="Tables\DTOs\RFuncionAdminUsuario.cs" />
+    <Compile Include="Tables\DTOs\RF_BancaSorteo.cs" />
+    <Compile Include="Tables\DTOs\RF_EsquemaPago.cs" />
+    <Compile Include="Tables\DTOs\RF_EsquemaPagoBanca.cs" />
+    <Compile Include="Tables\DTOs\RF_EsquemaPagoPremio.cs" />
+    <Compile Include="Tables\DTOs\RF_LimiteVenta.cs" />
+    <Compile Include="Tables\DTOs\RF_LimiteVentaDia.cs" />
+    <Compile Include="Tables\DTOs\RF_Loteria.cs" />
+    <Compile Include="Tables\DTOs\RF_ResumenVenta.cs" />
+    <Compile Include="Tables\DTOs\RF_Sorteo.cs" />
+    <Compile Include="Tables\DTOs\RF_SorteoCampo.cs" />
+    <Compile Include="Tables\DTOs\RF_SorteoConfig.cs" />
+    <Compile Include="Tables\DTOs\RF_SorteoDia.cs" />
+    <Compile Include="Tables\DTOs\RF_SorteoTipo.cs" />
+    <Compile Include="Tables\DTOs\RF_SorteoTipoJugada.cs" />
+    <Compile Include="Tables\DTOs\RF_SorteoTipoPremio.cs" />
+    <Compile Include="Tables\DTOs\RF_Transaccion.cs" />
+    <Compile Include="Tables\DTOs\RF_TransaccionDetalle.cs" />
+    <Compile Include="Tables\DTOs\RF_TransaccionJugada.cs" />
+    <Compile Include="Tables\DTOs\RGruposUsuario.cs" />
+    <Compile Include="Tables\DTOs\RRiferosUsuario.cs" />
+    <Compile Include="Tables\DTOs\RWebProductoBanca.cs" />
+    <Compile Include="Tables\DTOs\RWebWindowBanca.cs" />
+    <Compile Include="Tables\DTOs\SFuncionAdmin.cs" />
+    <Compile Include="Tables\DTOs\SReporte.cs" />
+    <Compile Include="Tables\DTOs\SWebProducto.cs" />
+    <Compile Include="Tables\DTOs\SWebProductoConfig.cs" />
+    <Compile Include="Tables\DTOs\SWebWindow.cs" />
+    <Compile Include="Tables\DTOs\sysdiagram.cs" />
+    <Compile Include="Tables\DTOs\TEsquema.cs" />
+    <Compile Include="Tables\DTOs\TGrupos.cs" />
+    <Compile Include="Tables\DTOs\TLoteria.cs" />
+    <Compile Include="Tables\DTOs\VContabilidad.cs" />
+    <Compile Include="Tables\DTOs\VDiaBillete.cs" />
+    <Compile Include="Tables\DTOs\VDiaConsolida.cs" />
+    <Compile Include="Tables\DTOs\VDiaConsolidax.cs" />
+    <Compile Include="Tables\DTOs\VDiaGrafico.cs" />
+    <Compile Include="Tables\DTOs\VDiaTarjeta.cs" />
+    <Compile Include="Tables\DTOs\VDiaVenta.cs" />
+    <Compile Include="Tables\DTOs\VDiaVPTransaccione.cs" />
+    <Compile Include="Tables\DTOs\VDiaVPTransaccionesWithProductoID.cs" />
+    <Compile Include="Tables\DTOs\VentaConPuto.cs" />
+    <Compile Include="Tables\DTOs\VFinanzaBancaConsolida.cs" />
+    <Compile Include="Tables\DTOs\VFinanzaBancaDia.cs" />
+    <Compile Include="Tables\DTOs\VFinanzaBancaDiaTotal.cs" />
+    <Compile Include="Tables\DTOs\VFinanzaBancaFecha.cs" />
+    <Compile Include="Tables\DTOs\VFinanzaBancaTotalFecha.cs" />
+    <Compile Include="Tables\DTOs\VFinanzaDiaConsolida.cs" />
+    <Compile Include="Tables\DTOs\VFinanzaHisConsolida.cs" />
+    <Compile Include="Tables\DTOs\VFinanzasPagado.cs" />
+    <Compile Include="Tables\DTOs\VHEstatusDia.cs" />
+    <Compile Include="Tables\DTOs\VHisConsolida.cs" />
+    <Compile Include="Tables\DTOs\VHisConsolida2.cs" />
+    <Compile Include="Tables\DTOs\VHisGrafico.cs" />
+    <Compile Include="Tables\DTOs\VP_Comisiones.cs" />
+    <Compile Include="Tables\DTOs\VP_Cuenta.cs" />
+    <Compile Include="Tables\DTOs\VP_CuentaConfig.cs" />
+    <Compile Include="Tables\DTOs\VP_CuentaTipo.cs" />
+    <Compile Include="Tables\DTOs\VP_HTransaccion.cs" />
+    <Compile Include="Tables\DTOs\VP_HTransaccionDetalle.cs" />
+    <Compile Include="Tables\DTOs\VP_LimiteVenta.cs" />
+    <Compile Include="Tables\DTOs\VP_LimiteVentaDia.cs" />
+    <Compile Include="Tables\DTOs\VP_LogComunicacion.cs" />
+    <Compile Include="Tables\DTOs\VP_MarcaVehiculo.cs" />
+    <Compile Include="Tables\DTOs\VP_ModeloVehiculo.cs" />
+    <Compile Include="Tables\DTOs\VP_Producto.cs" />
+    <Compile Include="Tables\DTOs\VP_ProductoCampo.cs" />
+    <Compile Include="Tables\DTOs\VP_ProductoConfig.cs" />
+    <Compile Include="Tables\DTOs\VP_Suplidor.cs" />
+    <Compile Include="Tables\DTOs\VP_SuplidorProducto.cs" />
+    <Compile Include="Tables\DTOs\VP_Transaccion.cs" />
+    <Compile Include="Tables\DTOs\VP_TransaccionDetalle.cs" />
+    <Compile Include="Tables\DTOs\VTarjetaFecBan.cs" />
+    <Compile Include="Tables\DTOs\VTarjetaPorCuentaID.cs" />
+    <Compile Include="Tables\DTOs\VTicketsDia.cs" />
+    <Compile Include="Tables\DTOs\VTicketsDiaGanadore.cs" />
+    <Compile Include="Tables\DTOs\VTicketsGanadore.cs" />
+    <Compile Include="Tables\DTOs\VTicketsHi.cs" />
+    <Compile Include="Tables\DTOs\VTicketsHisGanadore.cs" />
+    <Compile Include="Tables\DTOs\VTicketsNoPagado.cs" />
+    <Compile Include="Tables\DTOs\VTicketsNulo.cs" />
+    <Compile Include="Tables\DTOs\VTicketsPagado.cs" />
+    <Compile Include="Tables\DTOs\VTicketsValido.cs" />
+    <Compile Include="Tables\DTOs\VTransacionFecBan.cs" />
+    <Compile Include="Tables\DTOs\VVentaLocal.cs" />
+    <Compile Include="Tables\DTOs\_Partial-CL_Recibo.cs" />
+    <Compile Include="Tables\DTOs\_Partial-RF_TransaccionJugada.cs" />
+    <Compile Include="Tables\DTOs\_Partial-RF_Transaccion.cs" />
+    <Compile Include="Tables\DTOs\_Partial-HTicketDetalle.cs" />
+    <Compile Include="Tables\DTOs\_Partial-HTicket.cs" />
+    <Compile Include="Tables\DTOs\_Partial-DTicket.cs" />
+    <Compile Include="Tables\DTOs\_Partial-HTransaccion.cs" />
+    <Compile Include="Tables\Enums\DbEnums.cs" />
+    <Compile Include="Tables\Enums\ProductosExternosEnums.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitOfWork\BaseParameter.cs" />
+    <Compile Include="UnitOfWork\BaseResponse.cs" />
+    <Compile Include="UnitOfWork\GenericMethods.cs" />
+    <Compile Include="UnitOfWork\IGenericRepository.cs" />
+    <Compile Include="UnitOfWork\GenericRepository.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
+    <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\RepositoryGenerator.T4.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepositoryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\BaseRecord.cs" />
+    <Compile Include="Tables\TableClassesGenerator.T4.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TableClassesGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\JuegaMasViewModel.cs" />
+    <Compile Include="ViewModels\BilleteViewModel.cs" />
+    <Compile Include="ViewModels\ClienteSeccion.cs" />
+    <Compile Include="ViewModels\LoteriaServicioParametros.cs" />
+    <Compile Include="ViewModels\Mappers\JuegaMasMappers.cs" />
+    <Compile Include="ViewModels\Mappers\JuegosNuevosMapper.cs" />
+    <Compile Include="ViewModels\Mappers\PagosServiciosMapper.cs" />
+    <Compile Include="ViewModels\PagaFacilViewModel.cs" />
+    <Compile Include="ViewModels\Pega4ViewModel.cs" />
+    <Compile Include="ViewModels\PolizasSegurosViewModel.cs" />
+    <Compile Include="ViewModels\ReportesViewModels.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WSLotteryVIP\LoteryAuthService.wsdl" />
+    <None Include="Connected Services\WSLotteryVIP\LotteryAuthService.wsdl" />
+    <None Include="Connected Services\WSLotteryVIP\LotteryAuthService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WSLotteryVIP\LotteryAuthService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WSLotteryVIP\LotteryAuthService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WSLotteryVIP\LotteryAuthService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WSLotteryVIP\MAR.DataAccess.WSLotteryVIP.RespuestaAuth.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Repositories\RepositoryGenerator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RepositoryGenerator.T4.cs</LastGenOutput>
+    </None>
+    <None Include="StoredProcedure.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StoredProcedure.T4.sql</LastGenOutput>
+    </None>
+    <None Include="Tables\TableClassesGenerator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TableClassesGenerator.T4.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSLotteryVIP\LotteryAuthService.disco" />
+    <None Include="Connected Services\WSLotteryVIP\configuration91.svcinfo" />
+    <None Include="Connected Services\WSLotteryVIP\configuration.svcinfo" />
+    <None Include="Connected Services\WSLotteryVIP\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="StoredProcedure.T4.sql">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoredProcedure.tt</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MAR.AppLogic\MAR.AppLogic.csproj">
+      <Project>{7a839d18-0fee-4a3d-b284-690dea9dab4f}</Project>
+      <Name>MAR.AppLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SOUT.Config\SOUT.Config.csproj">
+      <Project>{28b8785c-a360-4f6f-9488-9788d4c7b5da}</Project>
+      <Name>SOUT.Config</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WSLotteryVIP\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
